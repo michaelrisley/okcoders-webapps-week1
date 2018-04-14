@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>In Class: Webapps Week 1</title>
+</head>
+<body>
+	<h1>In Class: Webapps Week 1</h1>
+	<script type="text/javascript">
+
+		 class Animal {
+		 	//constructor is building the framework for what Animals look like 
+		 	constructor(species, gender, size) {
+		 		this.species = species
+		 		this.gender = gender
+		 		this.size = size
+		 		this.hungerLevel = 10
+		 	}
+
+		 	//a function in a class is referred to as a "method"
+		 	//you don't have to func a method
+		 	speak(){
+		 		console.log(`hello I'm a ${this.species} that is ${this.size} and I am ${this.gender}`)
+		 	}
+
+		 	eat() {
+		 		this.hungerLevel -= 1
+		 		return `Holden's hunger level is now ${this.hungerLevel}`
+		 		}
+
+		 	exercise() {
+		 		this.hungerLevel += 1
+		 		return `Holden's hunger level is now ${this.hungerLevel}`
+		 	}
+		 }
+
+		 class Dog extends Animal {
+		 	constructor(gender, size, breed, barkLevel) {
+		 		//super() calls the constructor function of the class that this class extends
+		 		super("dog", gender, size)
+		 		this.breed = breed
+		 		this.barkLevel = barkLevel
+		 	}
+
+		 	bark() {
+		 		if(this.barkLevel > 5) {
+		 			console.log("WOOF!")
+		 		} else {
+		 			console.log("woof!")
+		 		}
+		 	}
+
+		 	//this is a static method
+		 	static smallDog(gender, breed) {
+		 		return new Dog(gender, "small", breed, 4)
+		 	}
+		 }
+
+		 const holden = new Animal("dog", "male", "large", 10)
+
+		 console.log("I am Holden")
+		 console.log(holden)
+
+		// const dog = new Dog("female", "large", "lab", 10)
+		// const dog2 = new Dog("male", "small", "lab", 4)
+		// const dog3thatissameasdog2 = Dog.smallDog("male", "lab")		
+		// console.log(dog.bark())
+		// console.log(dog2.bark())
+		// console.log(dog3thatissameasdog2.bark())
+
+
+
+
+	</script>
+</body>
+</html>
